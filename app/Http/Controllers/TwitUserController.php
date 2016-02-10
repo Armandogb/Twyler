@@ -9,5 +9,10 @@ use App\Http\Controllers\Controller;
 
 class TwitUserController extends Controller
 {
-    //
+	public function verify(Request $request){
+		/*return redirect('/');*/
+		echo $request->input('email');
+		echo $request->input('password');
+
+	}
 }

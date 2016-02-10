@@ -15,9 +15,16 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/test', function () {
+    return Twitter::getUserTimeline(['screen_name' => 'thujohn', 'count' => 20, 'format' => 'json']);
+});
+
+
 Route::get('/login', function () {
     return view('login');
 });
+
+Route::post('/user/verify', 'TwitUserController@verify');
 
 /*
 |--------------------------------------------------------------------------

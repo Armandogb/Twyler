@@ -1,10 +1,10 @@
-@extends('layouts.master')
+@extends('master')
 
 @section('title','Login')
 	
 @section('content')
 
-	<form>
+	<form method="POST" action="/user/verify">
 		<input type="text" name="email" placeholder="E-Mail">
 		<input type="text" name="password" placeholder="Password">
 		<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
