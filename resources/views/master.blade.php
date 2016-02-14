@@ -6,6 +6,7 @@
   </head>
   <body>
   	<section class="main-wrap">
+  		@include('header')
 
 		@yield('content')  		
 

@@ -1,8 +1,11 @@
-@extends('layouts.master')
+@extends('master')
 
-@section('title','Login')
+@section('title','Welcome!')
 
 @section('content')
+	@if (Session::has('flash_message'))
+		{{ Session::get('flash_message') }}
+	@endif
 
 
 @stop

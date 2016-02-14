@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Session;
 use Closure;
+use Redirect;
 
 class TwitCheck
 {
@@ -18,10 +19,10 @@ class TwitCheck
 
     public function handle($request, Closure $next){
 
-        if(Session::get('oauth_request_token_secret')){
+        if(Session::get('access_token')){
             return $next($request);
         }else{
-            return redirect('/login');
+            return Redirect::route('app.landing')->with('flash_message', 'Somebodies not logged in.......');
         }
 
     }

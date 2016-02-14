@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Input;
 class TwitUserController extends Controller{
 
 	public function login(){
+
 		 return view('login');
 	}
 
@@ -63,7 +64,7 @@ class TwitUserController extends Controller{
 
             if (!isset($token['oauth_token_secret']))
             {
-                return Redirect::route('twitter.login')->with('flash_error', 'We could not log you in on Twitter.');
+                return Redirect::route('twitter.login')->with('flash_message', 'We could not log you in on Twitter.');
             }
 
             $credentials = Twitter::getCredentials();
@@ -81,14 +82,20 @@ class TwitUserController extends Controller{
 
                 Session::put('access_token', $token);
 
-                return Redirect::to('/')->with('flash_notice', 'Congrats! You\'ve successfully signed in!');
+                return Redirect::to('/home')->with('flash_message', 'Congrats! You\'ve successfully signed in!');
             }
 
-            return Redirect::route('twitter.error')->with('flash_error', 'Crab! Something went wrong while signing you up!');
+            return Redirect::route('user.login')->with('flash_message', 'Crab! Something went wrong while signing you up!');
         }
+   
     }
 
+    public function logout(){
+        
+        Session::forget('access_token');
+        return Redirect::route('app.landing')->with('flash_message', 'You have sucessfully logged out!');
 
+    }
 
 
 
