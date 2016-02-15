@@ -41,6 +41,10 @@ class MainPageController extends Controller{
 
     public function twyl(Request $request){
 
+         $this->validate($request, [
+            'twyl' => 'required|max:140',
+        ]);
+
     	$twyl = $request->input('twyl');
 
     	Twitter::postTweet(['status' => $twyl, 'format' => 'json']);
