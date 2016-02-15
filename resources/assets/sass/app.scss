@@ -34,6 +34,20 @@ section{
 	overflow: hidden;
 }
 
+#make-twyl{
+	textarea{
+	}	
+}
+
+.twyl-obj{
+	width:100%;
+	border:1px solid #66757F;
+	background-color:#55ACEE;
+	margin-bottom: 2%;
+	border-radius: 5px;
+	padding: 2%;
+}
+
 .flash-m{
 	width: 100%;
 	text-align:center;
@@ -87,12 +101,22 @@ section{
 .user-p{
 	width:25%;
 	float:left;
-	border:1px red solid;
+	padding:2%;
+	text-align: center;
+	position:relative;
+	.info{
+		width:100%;
+		padding:3%;
+		height:200px;
+		background:#66757F;
+		border:2px solid #55ACEE;
+		border-radius: 5px;
+		color:#ffffff;
+	}
 }
 
 .user-action{
 	padding:2% 4%;
 	width:75%;
 	float:right;
-	border:1px yellow solid;
 }

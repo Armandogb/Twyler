@@ -5,6 +5,9 @@
 @section('content')
 	<section>
 		<div class="user-p">
+			<div class="info">
+				<h3>@ {{ $user_name }}</h3>
+			</div>
 		</div>
 		<div class="user-action">
 			@if (Session::has('flash_message'))
@@ -13,17 +16,19 @@
 				</div>
 			@endif
 
-			<form method="post" action="/make/twyl">
-				<input type="text" name="twyl" placeholder="Twyl">
+			<form method="post" action="/make/twyl" id="make-twyl">
+				<textarea type="text" form="make-twyl" name="twyl">Twyl...</textarea>
 				<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 				<input type="submit" value="Twyl!">
 			</form>
 
 			@foreach ($feed as $tw)
-				<p>{{ $tw->user->name }}</p>
-				<p>{{ $tw->user->screen_name }}</p>
-				<p>{{ $tw->created_at }}</p>
-			    <p>{{ $tw->text }}</p>
+				<div class="twyl-obj">
+					<p>{{ $tw->user->name }}</p>
+					<p>{{ $tw->user->screen_name }}</p>
+					<p>{{ $tw->created_at }}</p>
+				    <p>{{ $tw->text }}</p>
+			    </div>
 			@endforeach
 
 		</div>			
