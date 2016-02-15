@@ -46,7 +46,7 @@ class MainPageController extends Controller{
     	Twitter::postTweet(['status' => $twyl, 'format' => 'json']);
 
     	return Redirect::route('app.home')->with('flash_message','Nice Twyl!');
-
     }
+    
 
 }

@@ -8,7 +8,7 @@
 		{{ Session::get('flash_message') }}
 	@endif
 
-	<form method="get" action="/make/twyl">
+	<form method="post" action="/make/twyl">
 		<input type="text" name="twyl" placeholder="Tweet">
 		<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 		<input type="submit" value="Twyl!">
