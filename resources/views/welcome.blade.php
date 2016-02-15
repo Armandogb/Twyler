@@ -10,6 +10,11 @@
 				<h1>{{ Session::get('flash_message') }}</h1>
 			</div>
 		@endif
+
+		<div class="mouse-circle">
+			<div class="giant-mouse">
+			</div>
+		</div>
 	</section>
 
 @stop
