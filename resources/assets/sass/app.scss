@@ -35,7 +35,14 @@ section{
 }
 
 #make-twyl{
+	width:100%;
+	background:#66757F;
+	border:2px solid #55ACEE;
+	border-radius: 5px;
+	margin-bottom:2%;
+	
 	textarea{
+		width:100%;
 	}	
 }
 
@@ -46,6 +53,7 @@ section{
 	margin-bottom: 2%;
 	border-radius: 5px;
 	padding: 2%;
+
 }
 
 .flash-m{
@@ -90,7 +98,7 @@ section{
 		font-size:6vmin;
 		color: white;
 		-webkit-text-stroke:1px black;
-		 position: absolute;
+		position: absolute;
   		top: 50%;
   		right: 5%;
   		transform: translateY(-50%);
@@ -107,6 +115,7 @@ section{
 	.info{
 		width:100%;
 		padding:3%;
+		font-size: 3vmin;
 		height:200px;
 		background:#66757F;
 		border:2px solid #55ACEE;
