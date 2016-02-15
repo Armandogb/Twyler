@@ -20,6 +20,17 @@ header {
   background-color: #55ACEE;
   border-radius: 5px; }
 
+section {
+  width: 100%;
+  position: relative;
+  overflow: hidden; }
+
+.flash-m {
+  width: 100%;
+  text-align: center;
+  color: #55ACEE;
+  -webkit-text-stroke: 1px black; }
+
 .logo-bar {
   width: 100%;
   padding: 0 5%;
@@ -52,5 +63,16 @@ header {
     right: 5%;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%); }
+
+.user-p {
+  width: 25%;
+  float: left;
+  border: 1px red solid; }
+
+.user-action {
+  padding: 2% 4%;
+  width: 75%;
+  float: right;
+  border: 1px yellow solid; }
 
 /*# sourceMappingURL=app.css.map */
