@@ -32,11 +32,20 @@ class MainPageController extends Controller{
     	$t_json = Twitter::getHomeTimeline(['count' => 30, 'format' => 'json']);
     	$decode = json_decode($t_json);
 
+    	foreach ($decode as $d) {
+    		$d->created_at = Twitter::ago($d->created_at);
+    	}
+
     	return view('home',['user_name' => $user_name,'user_id' => $user_id,'feed' => $decode]);
     }
 
-    public function twyl(){
+    public function twyl(Request $request){
 
+    	$twyl = $request->input('twyl');
+
+    	Twitter::postTweet(['status' => $twyl, 'format' => 'json']);
+
+    	return Redirect::route('app.home')->with('flash_message','Nice Twyl!');
 
     }
 
