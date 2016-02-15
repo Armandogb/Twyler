@@ -15,5 +15,4 @@
 			@endif
 		</div>
 	</section>
-
 </header>  	
