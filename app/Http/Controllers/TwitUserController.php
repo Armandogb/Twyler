@@ -72,14 +72,11 @@ class TwitUserController extends Controller{
             if (is_object($credentials) && !isset($credentials->error))
             {
 
-                // $credentials contains the Twitter user object with all the info about the user.
-                // Add here your own user logic, store profiles, create new users on your tables...you name it!
-                // Typically you'll want to store at least, user id, name and access tokens
-                // if you want to be able to call the API on behalf of your users.
+                $creds = (array) $credentials;
+                $pic  = $creds["profile_image_url"];
 
-                // This is also the moment to log in your users if you're using Laravel's Auth class
-                // Auth::login($user) should do the trick.
 
+                Session::put('profile_pic', $pic);
                 Session::put('access_token', $token);
 
                 return Redirect::to('/home')->with('flash_message', 'Congrats! You\'ve successfully signed in!');
@@ -92,6 +89,7 @@ class TwitUserController extends Controller{
 
     public function logout(){
         
+        Session::forget('profile_pic');
         Session::forget('access_token');
         return Redirect::route('app.landing')->with('flash_message', 'You have sucessfully logged out!');
 

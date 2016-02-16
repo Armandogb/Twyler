@@ -8,6 +8,8 @@
 			<div class="info">
 				<h3>@ {{ $user_name }}</h3>
 			</div>
+			<div class="user-img" style="background-image: url({{ $pro_pic }});">
+			</div>
 		</div>
 		<div class="user-action">
 			@if (count($errors) > 0)
@@ -33,10 +35,13 @@
 
 			@foreach ($feed as $tw)
 				<div class="twyl-obj">
-					<p>{{ $tw->user->name }}</p>
-					<p>@ {{ $tw->user->screen_name }}</p>
+					<div class="tweet-img" style="background-image: url({{ $tw->user->profile_image_url }});">
+					</div>
+					<div class="tweet-text">
+					<p>{{ $tw->user->name }} @ {{ $tw->user->screen_name }}</p>
 					<p>{{ $tw->created_at }}</p>
 				    <p>{{ $tw->text }}</p>
+					</div>
 			    </div>
 			@endforeach
 

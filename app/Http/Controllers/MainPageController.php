@@ -28,6 +28,7 @@ class MainPageController extends Controller{
     	$token = Session::get('access_token');
     	$user_name = $token['screen_name'];
     	$user_id = $token["user_id"];
+        $pro_pic = Session::get('profile_pic');
 
     	$t_json = Twitter::getHomeTimeline(['count' => 30, 'format' => 'json']);
     	$decode = json_decode($t_json);
@@ -36,7 +37,7 @@ class MainPageController extends Controller{
     		$d->created_at = Twitter::ago($d->created_at);
     	}
 
-    	return view('home',['user_name' => $user_name,'user_id' => $user_id,'feed' => $decode]);
+    	return view('home',['user_name' => $user_name,'user_id' => $user_id,'feed' => $decode,'pro_pic' => $pro_pic]);
     }
 
     public function twyl(Request $request){
