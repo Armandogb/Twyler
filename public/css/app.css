@@ -27,11 +27,11 @@ section {
   overflow: hidden; }
 
 .mouse-circle {
-  width: 40%;
+  width: 70vmin;
   border-radius: 50%;
   border: 5px solid #55ACEE;
   background: red;
-  height: 41vmin;
+  height: 70vmin;
   margin: 0 auto; }
   .mouse-circle .giant-mouse {
     background: url(../images/mouse.png) no-repeat center center;
