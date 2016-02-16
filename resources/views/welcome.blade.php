@@ -13,6 +13,8 @@
 
 		<div class="mouse-circle">
 			<div class="giant-mouse">
+				<div class="quote">
+				</div>
 			</div>
 		</div>
 	</section>

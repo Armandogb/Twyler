@@ -50,11 +50,26 @@ section{
 	  background-size: contain;
 	  width:100%;
 	  height:100%;
+	  position: relative;
+	  .quote{
+	  background: url(../images/nothing.png) no-repeat center center; 
+	  -webkit-background-size: contain;
+	  -moz-background-size: contain;
+	  -o-background-size: contain;
+	  background-size: contain;
+	  width:100%;
+	  left:88%;
+	  height:100%;
+	  position: absolute;
+	  display: none;	
+	  transition: all 0.5s ease;
+	  }
     }
 }
 
 #make-twyl{
 	width:100%;
+	height:100px;
 	background:#66757F;
 	border:2px solid #55ACEE;
 	border-radius: 5px;
@@ -62,7 +77,14 @@ section{
 
 	textarea{
 		width:100%;
-	}	
+	}
+
+	input[type=submit]{
+		width:25%;
+		margin-left: 37.5%;
+		margin-bottom: 5px; 
+	}
+
 }
 
 .twyl-obj{

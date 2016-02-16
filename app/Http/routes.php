@@ -12,9 +12,4 @@ Route::group(['middleware' => ['web-check']], function () {
 	Route::get('/logout', 'TwitUserController@logout')->name('user.logout');
 	Route::get('/home', 'MainPageController@home')->name('app.home');
 	Route::post('/make/twyl', 'MainPageController@twyl')->name('app.twyl');
-
-	Route::get('/test', function () {
-    return Twitter::getHomeTimeline(['count' => 30, 'format' => 'json']);
-	});
-
 });

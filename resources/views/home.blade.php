@@ -38,9 +38,9 @@
 					<div class="tweet-img" style="background-image: url({{ $tw->user->profile_image_url }});">
 					</div>
 					<div class="tweet-text">
-					<p>{{ $tw->user->name }} @ {{ $tw->user->screen_name }}</p>
+					<p>{{ $tw->user->name }} <?php echo Twitter::linkify('@'.$tw->user->screen_name); ?></p>
 					<p>{{ $tw->created_at }}</p>
-				    <p>{{ $tw->text }}</p>
+				    <p><?php echo Twitter::linkify($tw->text); ?></p>
 					</div>
 			    </div>
 			@endforeach
